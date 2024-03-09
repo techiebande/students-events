@@ -27,7 +27,12 @@ const config = {
         gray950: "#0C111D",
         gray800: "#1D2939",
         gray500: "#667085",
+        gray300: "#D0D5DD",
         primary600: "#E31B54",
+        primary500: "#F63D68",
+        companyBg:
+          "linear-gradient(to right top, #fafbff, #f6f4fd, #f6ecf8, #f8e3ef, #fbdbe3)",
+        seBg: "#F0F5FE",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +62,9 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      content: {
+        stepicon: "/icons/Connector.svg",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -83,9 +91,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      minHeight: {
+        "main-content-height": "calc(100vh - 56.53px)",
+      },
     },
     fontFamily: {
-      filmotype: ["FilmotypeFashion"],
+      filmotype: ["filmoType"],
       poppins: ["var(--font-poppins)"],
     },
   },

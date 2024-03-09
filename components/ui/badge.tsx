@@ -18,6 +18,7 @@ const badgeVariants = cva(
         icon: "bg-white p-2 flex gap-2 items-center justify-center rounded-md shadow-icon",
         badge:
           "text-xs text-gray950 leading-5 font-[500] py-2 px-[14px] flex gap-2 items-center justify-center rounded-[180px] border border-[1px solid var(--Gray-300, #D0D5DD)] bg-white",
+        formBadge: "bg-white p-3 rounded-[5px]  shadow-stats border-0",
       },
     },
     defaultVariants: {

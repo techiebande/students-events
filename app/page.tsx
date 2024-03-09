@@ -19,7 +19,7 @@ export default function Home() {
   const [openNav, setOpenNav] = useState(false);
   console.log(openNav);
   return (
-    <div className={cn("min-h-[100vh] flex bg-[#f0f5fe] font-poppins")}>
+    <div className={cn("min-h-[100vh] flex bg-[#f0f5fe] poppins-regular")}>
       <div className="absolute sm:hidden left-5 top-3">
         <HamburgerMenuIcon
           className="w-[40px] h-[40px] cursor-pointer"
