@@ -1,8 +1,14 @@
-import { filmoType } from "@/app/create-job-post/page";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import React from "react";
+import localFont from "next/font/local";
 import { Badge } from "./ui/badge";
+
+const filmoType = localFont({
+  src: "../../public/fonts/filmotype.woff2",
+  display: "swap",
+  variable: "--filmotype",
+});
 
 const InternshipCard = () => {
   return (
