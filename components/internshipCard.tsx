@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { Badge } from "./ui/badge";
 
 const filmoType = localFont({
-  src: "../../public/fonts/filmotype.woff2",
+  src: "../public/fonts/filmotype.woff2",
   display: "swap",
   variable: "--filmotype",
 });
