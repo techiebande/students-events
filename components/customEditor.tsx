@@ -1,37 +1,54 @@
-import React, { useState } from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import Editor from "ckeditor5-custom-build";
-const editorConfiguration = {
-  toolbar: [
-    "heading",
-    "|",
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import "react-quill/dist/quill.snow.css"; // Import Quill styles
+
+const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+
+const CustomEditor = () => {
+  const [content, setContent] = useState("");
+
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+      [{ align: [] }],
+      [{ color: [] }],
+      ["code-block"],
+      ["clean"],
+    ],
+  };
+
+  const quillFormats = [
+    "header",
     "bold",
     "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
     "link",
-    "todoList",
-    "|",
-    "outdent",
-    "indent",
-    "|",
-    "undo",
-    "redo",
-  ],
+    "image",
+    "align",
+    "color",
+    "code-block",
+  ];
+
+  const handleEditorChange = (newContent: any) => {
+    setContent(newContent);
+  };
+
+  return (
+    <QuillEditor
+      value={content}
+      onChange={handleEditorChange}
+      modules={quillModules}
+      formats={quillFormats}
+      className="w-full h-[70%] mt-10 bg-white"
+    />
+  );
 };
 
-function CustomEditor(props: any) {
-  return (
-    <>
-      <CKEditor
-        editor={Editor}
-        config={editorConfiguration}
-        data={props.initialData}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          console.log({ event, editor, data });
-        }}
-      />
-      <p className="mt-3 text-xs sm:textsm sm:mt-4">0 characters</p>
-    </>
-  );
-}
 export default CustomEditor;

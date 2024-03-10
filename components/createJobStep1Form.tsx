@@ -88,7 +88,9 @@ const CreateJobStep1Form = ({ form }: any) => {
               </p>
             </FormLabel>
 
-            <FormControl>{/* <CustomEditor /> */}</FormControl>
+            <FormControl>
+              <CustomEditor />
+            </FormControl>
             {/* <FormMessage /> */}
           </FormItem>
         )}
