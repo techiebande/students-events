@@ -19,7 +19,7 @@ const CreateJobStep2Form = ({ form }: any) => {
 
   return (
     <div className="mt-10">
-      <div className="flex flex-col items-center sm:items-start sm:flex-row gap-5 ">
+      <div className="flex flex-col sm:flex-row gap-5 sm:flex-wrap">
         <JobType
           type="onsite"
           icon={
@@ -40,7 +40,8 @@ const CreateJobStep2Form = ({ form }: any) => {
           }
           selected={jobLocation === "remote"}
           title="Remote"
-          description="Employee works in person from a specific location."
+          description="Employee works from 
+          home."
         />
         <JobType
           type="hybrid"

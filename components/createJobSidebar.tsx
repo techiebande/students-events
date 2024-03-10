@@ -9,7 +9,7 @@ const CreateJobSidebar = () => {
   return (
     <div
       className={cn(
-        "hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] xl:pl-6 xl:w-[23vw] 2xl:w-[18vw]"
+        "hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] xl:px-6 xl:w-[23vw] 2xl:w-[18vw]"
       )}
     >
       <p className="w-full sm:text-center xl:text-left text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">

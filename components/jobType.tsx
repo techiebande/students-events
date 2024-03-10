@@ -22,7 +22,7 @@ const JobType = ({
     <div
       onClick={() => changeJobLocation(type)}
       className={cn(
-        "p-5 flex flex-col gap-[10px] rounded shadow-stats bg-white cursor-pointer w-[318px]",
+        "p-5 flex flex-col gap-[10px] rounded shadow-stats bg-white cursor-pointer w-[318px] h-[179px] shrink-0",
         selected ? "border border-[#FD6F8E] bg-[#FFF5F6]" : ""
       )}
     >

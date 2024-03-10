@@ -1,7 +1,7 @@
 export const jobPositionvalues = [
-  "job",
-  "internship",
+  "Job",
+  "Internship",
   "On Campus Student Employment",
   "Scientific Assistant",
-  "other",
+  "Other",
 ];

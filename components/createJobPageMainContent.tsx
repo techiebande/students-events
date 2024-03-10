@@ -64,10 +64,10 @@ const CreateJobPageMainContent = () => {
                   filmoType.className
                 )}
               >
-                {/* {createJobStepsData[step].title} */}
+                {createJobStepsData[step].title}
               </h1>
               <p className="text-gray-800 text-xs leading-4 poppins-regular mt-1 sm:text-sm sm:leading-5 ">
-                {/* {createJobStepsData[step].description} */}
+                {createJobStepsData[step].description}
               </p>
             </div>
 
@@ -79,13 +79,13 @@ const CreateJobPageMainContent = () => {
             <div className="flex items-center justify-between sm:justify-end sm:gap-6 ">
               <Button
                 onClick={prevStep}
-                className="bg-white hover:bg-white border border-gray-300 text-gray-600"
+                className="bg-white hover:bg-white border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5"
               >
                 Back
               </Button>
               <Button
                 onClick={nextStep}
-                className="inline-flex gap-3 bg-primary600 hover:bg-primary600 py-3 px-6"
+                className="gap-3 bg-primary600 hover:bg-primary600 py-[22px] px-[27.25px] leading-5"
               >
                 Continue <ChevronRightIcon />
               </Button>

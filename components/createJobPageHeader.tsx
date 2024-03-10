@@ -24,7 +24,7 @@ const CreateJobPageHeader = () => {
           variant="ghost"
           className="text-xs leading-4 text-gray950 poppins-semibold px-0 sm:leading-5 sm:text-sm"
         >
-          save as draft
+          Save as draft
         </Button>
         <Cross1Icon className="w-5 h-5" />
       </div>
