@@ -41,13 +41,16 @@ const CustomEditor = () => {
   };
 
   return (
-    <QuillEditor
-      value={content}
-      onChange={handleEditorChange}
-      modules={quillModules}
-      formats={quillFormats}
-      className="w-full h-[70%] mt-10 bg-white"
-    />
+    <>
+      <QuillEditor
+        value={content}
+        onChange={handleEditorChange}
+        modules={quillModules}
+        formats={quillFormats}
+        className="w-full min-h-[70%] mt-10 bg-white"
+      />
+      <p className="mt-3 text-xs sm:textsm sm:mt-4">0 characters</p>
+    </>
   );
 };
 

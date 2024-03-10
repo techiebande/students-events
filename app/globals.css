@@ -219,15 +219,12 @@
   font-style: italic;
 }
 
-.ck-editor__editable_inline:not(.ck-comment__input *) {
+.ql-editor {
   min-height: 300px;
-  outline: none;
 }
-.ck-editor__editable_inline:not(.ck-comment__input *):focus {
-  outline: none;
-}
-@media screen and (min-width: 400px) {
-  .ck-editor__editable_inline:not(.ck-comment__input *) {
+
+@media scree and (min-width: 639px) {
+  .ql-editor {
     min-height: 348px;
   }
 }
