@@ -62,6 +62,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        kycBg:
+          "radial-gradient(circle, rgba(237,242,254,1) 0%, rgba(254,228,233,1) 40%, rgba(254,254,255,1) 99%)",
+      },
+
       content: {
         stepicon: "/icons/Connector.svg",
       },
@@ -86,6 +91,7 @@ const config = {
           "0px 2.191px 1.753px 0px rgba(108, 73, 172, 0.02), 0px 5.265px 4.212px 0px rgba(108, 73, 172, 0.03), 0px 9.913px 7.93px 0px rgba(108, 73, 172, 0.04), 0px 17.683px 14.146px 0px rgba(108, 73, 172, 0.04)",
         cards:
           "0px 2.191px 1.753px 0px rgba(108, 73, 172, 0.02), 0px 5.265px 4.212px 0px rgba(108, 73, 172, 0.03), 0px 9.913px 7.93px 0px rgba(108, 73, 172, 0.04), 0px 17.683px 14.146px 0px rgba(108, 73, 172, 0.04)",
+        searchItems: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
