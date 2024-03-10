@@ -95,7 +95,6 @@ const CreateJobStep1Form = ({ form }: any) => {
           </FormItem>
         )}
       />
-      <Separator className="mt-14 bg-gray-200 sm:mt-10" />
     </>
   );
 };

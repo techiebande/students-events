@@ -12,28 +12,28 @@ const FormSteps = () => {
   return (
     <div className="flex flex-col gap-6 w-full">
       <FormStep
-        Icon={CopyIcon}
+        Icon="/icons/Copy-Document-active.svg"
         current
         title="Job description"
         description="please provide your name and email"
       />
       <FormStep
-        Icon={ClipboardIcon}
+        Icon="/icons/Copy-Document.svg"
         title="Basic information"
         description="Add details about job post"
       />
       <FormStep
-        Icon={MixerHorizontalIcon}
+        Icon="/icons/Filter.svg"
         title="Categorize job post"
-        description="Add filter options and requirements"
+        description="Date and documents"
       />
       <FormStep
-        Icon={Pencil2Icon}
+        Icon="/icons/Document-Edit.svg"
         title="Application Process"
         description="Add filter options and requirements"
       />
       <FormStep
-        Icon={Share1Icon}
+        Icon="/icons/Share.svg"
         title="Share"
         description="Share your job post."
         last

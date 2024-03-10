@@ -8,14 +8,14 @@ const CreateJobPageHeader = () => {
     <div className="flex justify-between items-center py-2 px-[15px] sm:px-[26px] md:px-8 lg:px-[60px]">
       <div className="flex gap-1 items-center sm:gap-5">
         <Image
-          src="/icons/logo.png"
+          src="/icons/Logo.svg"
           alt="logo"
           width="36"
           height="36"
           className="mt-2"
         />
 
-        <p className=" text-gray950 text-sm sm:text-base font-bold leading-5 sm:leading-6">
+        <p className=" text-[#0C111D] text-sm sm:text-base poppins-medium leading-5 sm:leading-6">
           Create new job post
         </p>
       </div>

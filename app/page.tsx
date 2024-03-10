@@ -29,7 +29,7 @@ export default function Home() {
       </div>
       <div className="hidden sm:flex sm:w-[10%] md:w-[25%] bg-white">
         <div className="flex h-[45px] w-full items-center sm:justify-center lg:justify-start lg:ml-8 mt-8">
-          <Image src="/icons/logo.png" alt="site logo" width={45} height={45} />
+          <Image src="/icons/Logo.svg" alt="site logo" width={45} height={45} />
         </div>
       </div>
 

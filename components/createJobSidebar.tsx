@@ -1,17 +1,29 @@
 import React from "react";
 import FormSteps from "./formSteps";
 import InternshipCard from "./internshipCard";
+import useStore from "@/store/zuStore";
+import { cn } from "@/lib/utils";
 
 const CreateJobSidebar = () => {
+  const step = useStore((state) => state.createJob.step);
   return (
-    <div className="hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] xl:pl-6 xl:w-[23vw]">
+    <div
+      className={cn(
+        "hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] xl:pl-6 xl:w-[23vw] 2xl:w-[18vw]"
+      )}
+    >
       <p className="w-full sm:text-center xl:text-left text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">
         NEXT STEPS
       </p>
       <div className="pt-5">
         <FormSteps />
       </div>
-      <div className="mt-[44px] hidden xl:block">
+      <div
+        className={cn(
+          step === 2 ? "xl:hidden" : "xl:block",
+          "mt-[44px] hidden"
+        )}
+      >
         <p className="w-full text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">
           PREVIEW
         </p>

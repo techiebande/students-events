@@ -47,7 +47,7 @@ const CustomEditor = () => {
         onChange={handleEditorChange}
         modules={quillModules}
         formats={quillFormats}
-        className="w-full min-h-[70%] mt-10 bg-white"
+        className="w-full mt-3 bg-white"
       />
       <p className="mt-3 text-xs sm:textsm sm:mt-4">0 characters</p>
     </>

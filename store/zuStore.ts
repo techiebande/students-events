@@ -16,7 +16,10 @@ const useStore = create<StateType>((set) => ({
     set((state: StateType) => ({
       createJob: {
         ...state.createJob,
-        step: state.createJob.step + 1,
+        step:
+          state.createJob.step < 2
+            ? state.createJob.step + 1
+            : state.createJob.step,
       },
     })),
 
@@ -24,7 +27,10 @@ const useStore = create<StateType>((set) => ({
     set((state: StateType) => ({
       createJob: {
         ...state.createJob,
-        step: state.createJob.step - 1,
+        step:
+          state.createJob.step > 1
+            ? state.createJob.step - 1
+            : state.createJob.step,
       },
     })),
   changeJobLocation: (payload: string) =>

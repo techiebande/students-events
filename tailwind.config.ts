@@ -92,6 +92,12 @@ const config = {
         cards:
           "0px 2.191px 1.753px 0px rgba(108, 73, 172, 0.02), 0px 5.265px 4.212px 0px rgba(108, 73, 172, 0.03), 0px 9.913px 7.93px 0px rgba(108, 73, 172, 0.04), 0px 17.683px 14.146px 0px rgba(108, 73, 172, 0.04)",
         searchItems: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
+        internship:
+          "0px 2.191px 1.753px 0px rgba(108, 73, 172, 0.02), 0px 5.265px 4.212px 0px rgba(108, 73, 172, 0.03), 0px 9.913px 7.93px 0px rgba(108, 73, 172, 0.04), 0px 17.683px 14.146px 0px rgba(108, 73, 172, 0.04), 0px 33.074px 26.459px 0px rgba(108, 73, 172, 0.05), 0px 79.167px 63.333px 0px rgba(108, 73, 172, 0.07)",
+      },
+      dropShadow: {
+        bcgShadow:
+          "0px 2.191px 1.753px rgba(108, 73, 172, 0.02)) drop-shadow(0px 5.265px 4.212px rgba(108, 73, 172, 0.03)) drop-shadow(0px 9.913px 7.93px rgba(108, 73, 172, 0.04)) drop-shadow(0px 17.683px 14.146px rgba(108, 73, 172, 0.04)",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
