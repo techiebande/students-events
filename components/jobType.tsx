@@ -8,10 +8,14 @@ const JobType = ({
   icon,
   selected,
   type,
+  title,
+  description,
 }: {
   icon: string;
   selected: boolean;
   type: string;
+  title: string;
+  description: string;
 }) => {
   const changeJobLocation = useStore((state) => state.changeJobLocation);
   return (
@@ -30,7 +34,7 @@ const JobType = ({
           selected ? "text-primary600" : "text-gray-950"
         )}
       >
-        Onsite
+        {title}
       </p>
       <p
         className={cn(
@@ -38,7 +42,7 @@ const JobType = ({
           selected ? "text-primary600" : "text-gray-950"
         )}
       >
-        Employee works in person from a specific location.
+        {description}
       </p>
     </div>
   );

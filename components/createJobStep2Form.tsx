@@ -28,6 +28,8 @@ const CreateJobStep2Form = ({ form }: any) => {
               : "/icons/onsite-inactive.svg"
           }
           selected={jobLocation === "onsite"}
+          title="Onsite"
+          description="Employee works in person from a specific location."
         />
         <JobType
           type="remote"
@@ -37,6 +39,8 @@ const CreateJobStep2Form = ({ form }: any) => {
               : "/icons/remote-active.svg"
           }
           selected={jobLocation === "remote"}
+          title="Remote"
+          description="Employee works in person from a specific location."
         />
         <JobType
           type="hybrid"
@@ -46,6 +50,8 @@ const CreateJobStep2Form = ({ form }: any) => {
               : "/icons/hybrid-icon.svg"
           }
           selected={jobLocation === "hybrid"}
+          title="Hybrid"
+          description="Employee works a combination of onsite and remote."
         />
       </div>
       <FormField
