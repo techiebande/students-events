@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Form,
   FormControl,
@@ -8,12 +10,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import CustomEditor from "./customEditor";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { jobPositionvalues } from "@/lib/jobPositionValues";
 import { Input } from "./ui/input";
 import CustomCheckbox from "./customCheckbox";
+import CustomRadioInput from "./customRadioInput";
 
 const CreateJobStep1Form = ({ form }: any) => {
+  const [position, setPosition] = useState<string>("");
+  const [isWorkStudyProgram, setIsWorkStudyProgram] = useState(false);
+
+  const changePosition = (value: string) => setPosition(value);
+
   return (
     <>
       <FormField
@@ -35,44 +42,31 @@ const CreateJobStep1Form = ({ form }: any) => {
         )}
       />
 
-      <FormField
-        control={form.control}
-        name="position"
-        render={({ field }) => (
-          <FormItem className="mt-5 sm:mt-10">
-            <FormLabel className="text-sm poppins-semibold leading-5">
-              Position type
-            </FormLabel>
-            <FormControl>
-              <RadioGroup
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-                className="flex flex-col space-y-4"
-              >
-                {jobPositionvalues.map((value, i) => {
-                  return (
-                    <FormItem
-                      key={i}
-                      className="flex items-center space-x-3 space-y-0"
-                    >
-                      <FormControl>
-                        <RadioGroupItem value={value.toLocaleLowerCase()} />
-                      </FormControl>
-                      <FormLabel className="font-normal text-gray-800 text-sm leading-5">
-                        {value}
-                      </FormLabel>
-                    </FormItem>
-                  );
-                })}
-              </RadioGroup>
-            </FormControl>
+      <div className="mt-5 sm:mt-10">
+        <p className="text-sm poppins-semibold leading-5">Position type</p>
+        <div className="mt-3 flex flex-col gap-4">
+          {jobPositionvalues.map((value, i) => {
+            return (
+              <CustomRadioInput
+                key={value + i}
+                name="position"
+                value={value}
+                label={value}
+                position={position}
+                changePosition={changePosition}
+              />
+            );
+          })}
+        </div>
+      </div>
 
-            {/* <FormMessage /> */}
-          </FormItem>
-        )}
-      />
-
-      <CustomCheckbox />
+      <div className="mt-5 sm:mt-10">
+        <CustomCheckbox
+          label="Work-Study program"
+          isChecked={isWorkStudyProgram}
+          setIsChecked={setIsWorkStudyProgram}
+        />
+      </div>
 
       <FormField
         control={form.control}
