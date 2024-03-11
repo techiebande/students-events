@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import JobType from "./jobType";
 import useStore from "@/store/zuStore";
 import {
@@ -13,15 +13,27 @@ import {
 import { Input } from "./ui/input";
 import { Cross1Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Badge } from "./ui/badge";
+import CustomCheckbox from "./customCheckbox";
 
 const JobLocationForm = ({ form }: any) => {
+  const [useAsDefault, setUseAsDefault] = useState();
+  const [locations, setLocations] = useState([
+    { id: 1, name: "Paris, Greater Paris Metropolitan Area, France" },
+  ]);
+
   const jobLocation = useStore((state) => state.createJob.jobLocation);
 
   const changeJobLocation = useStore((state) => state.changeJobLocation);
 
+  const removeLocation = (id: number) => {
+    setLocations((locations) =>
+      locations.filter((location) => location.id !== id)
+    );
+  };
+
   return (
-    <div className="mt-10">
-      <div className="grid grid-cols-3 sm:flex-row gap-5 sm:flex-wrap">
+    <div className="mt-10 h-full flex flex-col">
+      <div className="grid grid-cols-2 sm:flex-row gap-5 sm:flex-wrap">
         <JobType
           change={changeJobLocation}
           className="col-span-1"
@@ -63,35 +75,57 @@ const JobLocationForm = ({ form }: any) => {
           description="Employee works a combination of onsite and remote."
         />
       </div>
-      <FormField
-        control={form.control}
-        name="title"
-        render={({ field }) => (
-          <FormItem className="mt-10 relative">
-            <FormLabel className="text-sm poppins-semibold leading-5">
-              Onsite location
-              <span className="text-gray-800 block mt-1 text-sm font-normal leading-5">
-                Here you can add additional skills.
-              </span>
-            </FormLabel>
 
-            <FormControl>
-              <Input
-                className="mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
-                {...field}
-              />
-            </FormControl>
-            {/* <FormMessage /> */}
-            <MagnifyingGlassIcon className="absolute w-5 h-5 top-[60px] left-[10px]" />
-          </FormItem>
-        )}
-      />
+      {jobLocation !== "remote" ? (
+        <>
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem className="mt-10 relative">
+                <FormLabel className="text-sm poppins-semibold leading-5">
+                  Onsite location
+                  <span className="text-gray-800 block mt-1 text-sm font-normal leading-5">
+                    Here you can add additional skills.
+                  </span>
+                </FormLabel>
 
-      <div className="mt-3 mb-[100px]">
-        <Badge className="bg-white border border-gray-300 shadow-searchItems py-[10px] px-[14px] rounded-[180px] text-gray-950 text-sm poppins-semibold hover:bg-white">
-          Paris, Greater Paris Metropolitan Area, France{" "}
-          <Cross1Icon className="ml-2 w-5 h-5" />{" "}
-        </Badge>
+                <FormControl>
+                  <Input
+                    className="mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                    {...field}
+                  />
+                </FormControl>
+                {/* <FormMessage /> */}
+                <MagnifyingGlassIcon className="absolute w-5 h-5 top-[60px] left-[10px]" />
+              </FormItem>
+            )}
+          />
+          <div className="mt-3 mb-[100px]">
+            {locations.map((location) => {
+              return (
+                <Badge
+                  key={location.id}
+                  className="bg-white border border-gray-300 shadow-searchItems py-[10px] px-[14px] rounded-[180px] text-gray-950 text-sm poppins-semibold hover:bg-white"
+                >
+                  {location.name}
+                  <Cross1Icon
+                    onClick={() => removeLocation(location.id)}
+                    className="ml-2 w-5 h-5"
+                  />
+                </Badge>
+              );
+            })}
+          </div>
+        </>
+      ) : null}
+
+      <div className="mt-auto mb-3">
+        <CustomCheckbox
+          label="Set this as default values for future job posts."
+          isChecked={useAsDefault}
+          setIsChecked={setUseAsDefault}
+        />
       </div>
     </div>
   );

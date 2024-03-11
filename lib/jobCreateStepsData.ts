@@ -7,4 +7,8 @@ export const createJobStepsData = {
     title: "Time Requirements",
     description: "What is the anticipated workload for candidates?",
   },
+  3: {
+    title: "Job Location",
+    description: "Specifiy job location",
+  },
 };

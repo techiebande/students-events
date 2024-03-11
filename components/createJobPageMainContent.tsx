@@ -18,6 +18,7 @@ import { createJobStepsData } from "@/lib/jobCreateStepsData";
 import useStore from "@/store/zuStore";
 import Separator from "./Separator";
 import TimeRequirementsForm from "./timeRequirementsForm";
+import JobLocationForm from "./jobLocationform";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -73,6 +74,7 @@ const CreateJobPageMainContent = () => {
 
             {step === 1 ? <CreateJobStep1Form form={form} /> : null}
             {step === 2 ? <TimeRequirementsForm form={form} /> : null}
+            {step === 3 ? <JobLocationForm form={form} /> : null}
 
             <Separator />
 

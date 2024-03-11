@@ -117,7 +117,7 @@ const TimeRequirementsForm = ({ form }: any) => {
         </div>
       ) : null}
 
-      <div className="mt-6">
+      <div className="mt-6 mb-3">
         <p className="text-sm poppins-semibold leading-5">
           Employment Duration
         </p>

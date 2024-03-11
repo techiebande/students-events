@@ -33,7 +33,7 @@ const FormSteps = () => {
       />
       <FormStep
         Icon={
-          step > 2
+          step > 4
             ? "/icons/Document-Edit-active.svg"
             : "/icons/Document-Edit.svg"
         }

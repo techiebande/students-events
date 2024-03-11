@@ -29,7 +29,7 @@ const useStore = create<StateType>((set) => ({
       createJob: {
         ...state.createJob,
         step:
-          state.createJob.step < 2
+          state.createJob.step < 3
             ? state.createJob.step + 1
             : state.createJob.step,
       },
