@@ -160,7 +160,7 @@ const TimeRequirementsForm = ({ form }: any) => {
               })}
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-6">
+          <div className="mt-6 grid grid-cols-2 gap-6 mb-6">
             <FormField
               control={form.control}
               name="dob"
