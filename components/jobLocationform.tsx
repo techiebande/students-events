@@ -32,8 +32,8 @@ const JobLocationForm = ({ form }: any) => {
   };
 
   return (
-    <div className="mt-10 h-full flex flex-col mb-3">
-      <div className="grid grid-cols-2 sm:flex-row gap-5 sm:flex-wrap">
+    <div className="mt-10 h-full flex flex-col">
+      <div className="grid grid-cols-2 sm:flex-row gap-5 sm:flex-wrap mb-3">
         <JobType
           change={changeJobLocation}
           className="col-span-1"
