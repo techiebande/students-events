@@ -14,7 +14,7 @@ import { Input } from "./ui/input";
 import { Cross1Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Badge } from "./ui/badge";
 
-const CreateJobStep2Form = ({ form }: any) => {
+const JobLocationForm = ({ form }: any) => {
   const jobLocation = useStore((state) => state.createJob.jobLocation);
 
   const changeJobLocation = useStore((state) => state.changeJobLocation);
@@ -97,4 +97,4 @@ const CreateJobStep2Form = ({ form }: any) => {
   );
 };
 
-export default CreateJobStep2Form;
+export default JobLocationForm;

@@ -11,7 +11,6 @@ import { z } from "zod";
 import { setCreateJobState } from "@/store/jobCreateSlice";
 import { cn } from "@/lib/utils";
 import CreateJobStep1Form from "./createJobStep1Form";
-import CreateJobStep2Form from "./createJobStep2Form";
 import { Button } from "./ui/button";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import CreateJobSidebar from "./createJobSidebar";
