@@ -18,19 +18,24 @@ const CreateJobSidebar = () => {
       <div className="pt-5">
         <FormSteps />
       </div>
-      <div
-        className={cn(
-          step === 2 ? "xl:hidden" : "xl:block",
-          "mt-[44px] hidden"
-        )}
-      >
-        <p className="w-full text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">
+      <div className={cn("mt-[44px] hidden xl:block")}>
+        <p
+          className={cn(
+            step !== 1 ? "hidden" : "",
+            "w-full text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4"
+          )}
+        >
           PREVIEW
         </p>
-        <div className="mt-5 text-primary500 text-xs poppins-semibold leading-4">
+        <div
+          className={cn(
+            step !== 1 ? "hidden" : "",
+            "mt-5 text-primary500 text-xs poppins-semibold leading-4"
+          )}
+        >
           <InternshipCard />
         </div>
-        <div className="mt-10">
+        <div className={cn("hidden mt-10")}>
           <p className="w-full text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">
             QUICK TIPS
           </p>

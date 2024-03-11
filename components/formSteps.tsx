@@ -1,42 +1,46 @@
 import React from "react";
 import FormStep from "./formStep";
-import {
-  ClipboardIcon,
-  CopyIcon,
-  MixerHorizontalIcon,
-  Pencil2Icon,
-  Share1Icon,
-} from "@radix-ui/react-icons";
+import useStore from "@/store/zuStore";
 
 const FormSteps = () => {
+  const step = useStore((state) => state.createJob.step);
+
   return (
     <div className="flex flex-col gap-6 w-full">
       <FormStep
-        Icon="/icons/Copy-Document-active.svg"
+        Icon={"/icons/Copy-Document-active.svg"}
         current
         title="Job description"
         description="please provide your name and email"
       />
       <FormStep
-        Icon="/icons/Copy-Document.svg"
-        title="Basic information"
-        description="Add details about job post"
+        Icon={step > 1 ? "/icons/Clock-active.svg" : "/icons/Clock.svg"}
+        title="Time Requirements"
+        description="Specify anticipated workload"
+        current={step > 1}
       />
       <FormStep
-        Icon="/icons/Filter.svg"
+        Icon={step > 2 ? "/icons/Location-active.svg" : "/icons/Location.svg"}
+        title="Job Location"
+        description="Specifiy job location"
+        current={step > 2}
+      />
+      <FormStep
+        Icon={step > 3 ? "/icons/Filter-active.svg" : "/icons/Filter.svg"}
         title="Categorize job post"
-        description="Date and documents"
+        description="Add filters and requirements"
+        current={step > 3}
       />
       <FormStep
-        Icon="/icons/Document-Edit.svg"
+        Icon={
+          step > 2
+            ? "/icons/Document-Edit-active.svg"
+            : "/icons/Document-Edit.svg"
+        }
         title="Application Process"
-        description="Add filter options and requirements"
-      />
-      <FormStep
-        Icon="/icons/Share.svg"
-        title="Share"
-        description="Share your job post."
+        description="Dates and documents"
         last
+        current={step > 4}
       />
     </div>
   );

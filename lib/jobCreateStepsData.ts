@@ -4,7 +4,7 @@ export const createJobStepsData = {
     description: "What is this job about?",
   },
   2: {
-    title: "Job Details",
-    description: "Where should candidates expect to work?",
+    title: "Time Requirements",
+    description: "What is the anticipated workload for candidates?",
   },
 };

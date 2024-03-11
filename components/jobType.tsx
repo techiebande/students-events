@@ -10,19 +10,23 @@ const JobType = ({
   type,
   title,
   description,
+  className,
+  change,
 }: {
   icon: string;
   selected: boolean;
   type: string;
   title: string;
   description: string;
+  className: string;
+  change: (payload: string) => void;
 }) => {
-  const changeJobLocation = useStore((state) => state.changeJobLocation);
   return (
     <div
-      onClick={() => changeJobLocation(type)}
+      onClick={() => change(type)}
       className={cn(
-        "p-5 flex flex-col gap-[10px] rounded shadow-stats bg-white cursor-pointer w-[318px] h-[179px] shrink-0",
+        className,
+        "p-5 flex flex-col gap-[10px] rounded shadow-stats bg-white cursor-pointer",
         selected ? "border border-[#FD6F8E] bg-[#FFF5F6]" : ""
       )}
     >

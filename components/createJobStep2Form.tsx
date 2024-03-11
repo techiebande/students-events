@@ -17,10 +17,14 @@ import { Badge } from "./ui/badge";
 const CreateJobStep2Form = ({ form }: any) => {
   const jobLocation = useStore((state) => state.createJob.jobLocation);
 
+  const changeJobLocation = useStore((state) => state.changeJobLocation);
+
   return (
     <div className="mt-10">
-      <div className="flex flex-col sm:flex-row gap-5 sm:flex-wrap">
+      <div className="grid grid-cols-3 sm:flex-row gap-5 sm:flex-wrap">
         <JobType
+          change={changeJobLocation}
+          className="col-span-1"
           type="onsite"
           icon={
             jobLocation === "onsite"
@@ -32,6 +36,8 @@ const CreateJobStep2Form = ({ form }: any) => {
           description="Employee works in person from a specific location."
         />
         <JobType
+          change={changeJobLocation}
+          className="col-span-1"
           type="remote"
           icon={
             jobLocation !== "remote"
@@ -44,6 +50,8 @@ const CreateJobStep2Form = ({ form }: any) => {
           home."
         />
         <JobType
+          change={changeJobLocation}
+          className="col-span-1"
           type="hybrid"
           icon={
             jobLocation === "hybrid"
