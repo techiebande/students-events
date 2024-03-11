@@ -8,10 +8,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import CustomEditor from "./customEditor";
-import { Separator } from "./ui/separator";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { jobPositionvalues } from "@/lib/jobPositionValues";
 import { Input } from "./ui/input";
+import CustomCheckbox from "./customCheckbox";
 
 const CreateJobStep1Form = ({ form }: any) => {
   return (
@@ -71,6 +71,8 @@ const CreateJobStep1Form = ({ form }: any) => {
           </FormItem>
         )}
       />
+
+      <CustomCheckbox />
 
       <FormField
         control={form.control}
