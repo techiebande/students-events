@@ -106,6 +106,10 @@ const config = {
       minHeight: {
         "main-content-height": "calc(100vh - 56.53px)",
       },
+      width: {
+        "2xlSidebar": "calc(100vw - 324px)",
+        lgSidebar: "calc(100vw - 96px)",
+      },
     },
     fontFamily: {
       filmotype: ["filmoType"],

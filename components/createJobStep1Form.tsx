@@ -76,7 +76,7 @@ const CreateJobStep1Form = ({ form }: any) => {
         control={form.control}
         name="title"
         render={({ field }) => (
-          <FormItem className="mt-5 sm:mt-10">
+          <FormItem className="mt-5 sm:mt-10 mb-10">
             <FormLabel className="text-sm poppins-semibold leading-5">
               Job description
               <p className="text-gray-800 text-xs leading-4 poppins-regular mt-1 flex justify-center sm:text-sm sm:leading-5 ">

@@ -17,7 +17,7 @@ import { ChevronRightIcon } from "@radix-ui/react-icons";
 import CreateJobSidebar from "./createJobSidebar";
 import { createJobStepsData } from "@/lib/jobCreateStepsData";
 import useStore from "@/store/zuStore";
-import { Separator } from "./ui/separator";
+import Separator from "./Separator";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -51,11 +51,11 @@ const CreateJobPageMainContent = () => {
   }
   return (
     <div className="flex min-h-main-content-height">
-      <div className="bg-seBg min-h-full w-full pt-5 px-5 pb-[84px] sm:pb-[130px] sm:px-[30px] md:px-10 lg:px-[60px] sm:pt-8 md:pt-[52px] lg:pt-10 md:w-[90vw]  xl:w-[77vw] 2xl:w-[82vw]">
+      <div className="bg-seBg min-h-full w-full pt-5 px-5 pb-[84px] sm:pb-[130px] sm:px-[30px] md:px-10 lg:px-[60px] sm:pt-8 md:pt-[52px] lg:pt-10 md:w-[90vw] lg:w-lgSidebar xl:w-2xlSidebar">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col min-h-full"
+            className="flex flex-col h-full"
           >
             <div>
               <h1
@@ -74,9 +74,9 @@ const CreateJobPageMainContent = () => {
             {step === 1 ? <CreateJobStep1Form form={form} /> : null}
             {step === 2 ? <CreateJobStep2Form form={form} /> : null}
 
-            <Separator className="mt-auto mb-5 bg-gray-200  sm:mb-5" />
+            <Separator />
 
-            <div className="flex items-center justify-between sm:justify-end sm:gap-6 ">
+            <div className="flex items-center justify-between sm:justify-end sm:gap-6 mt-5">
               <Button
                 onClick={prevStep}
                 className="bg-white hover:bg-white border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5"

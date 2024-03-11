@@ -79,7 +79,7 @@ const CreateJobStep2Form = ({ form }: any) => {
         )}
       />
 
-      <div className="mt-3">
+      <div className="mt-3 mb-[100px]">
         <Badge className="bg-white border border-gray-300 shadow-searchItems py-[10px] px-[14px] rounded-[180px] text-gray-950 text-sm poppins-semibold hover:bg-white">
           Paris, Greater Paris Metropolitan Area, France{" "}
           <Cross1Icon className="ml-2 w-5 h-5" />{" "}
