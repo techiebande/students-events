@@ -7,6 +7,8 @@ type StateType = {
     jobTimeRequirements: string;
     employmentDuration: string;
     duration: string;
+    preferedJobApplicationSubmissionMethod: string;
+    requiredApplicationDocuments: string;
   };
   nextStep: () => void;
   prevStep: () => void;
@@ -14,6 +16,8 @@ type StateType = {
   changeJobTimeRequirements: (payload: string) => void;
   changeEmploymentDuration: (payload: string) => void;
   changeDuration: (payload: string) => void;
+  changePreferedJobApplicationSubmissionMethod: (payload: string) => void;
+  changeRequiredApplicationDocuments: (payload: string) => void;
 };
 
 const useStore = create<StateType>((set) => ({
@@ -23,13 +27,15 @@ const useStore = create<StateType>((set) => ({
     jobTimeRequirements: "full time",
     employmentDuration: "Permanent",
     duration: "1 - 3 months",
+    preferedJobApplicationSubmissionMethod: "varyance",
+    requiredApplicationDocuments: "Varyance student profile",
   },
   nextStep: () =>
     set((state: StateType) => ({
       createJob: {
         ...state.createJob,
         step:
-          state.createJob.step < 3
+          state.createJob.step < 4
             ? state.createJob.step + 1
             : state.createJob.step,
       },
@@ -71,6 +77,20 @@ const useStore = create<StateType>((set) => ({
       createJob: {
         ...state.createJob,
         duration: payload,
+      },
+    })),
+  changePreferedJobApplicationSubmissionMethod: (payload: string) =>
+    set((state: StateType) => ({
+      createJob: {
+        ...state.createJob,
+        preferedJobApplicationSubmissionMethod: payload,
+      },
+    })),
+  changeRequiredApplicationDocuments: (payload: string) =>
+    set((state: StateType) => ({
+      createJob: {
+        ...state.createJob,
+        requiredApplicationDocuments: payload,
       },
     })),
 }));

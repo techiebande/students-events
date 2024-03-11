@@ -11,4 +11,8 @@ export const createJobStepsData = {
     title: "Job Location",
     description: "Specifiy job location",
   },
+  4: {
+    title: "Application Process",
+    description: "What’s hte application window and process?",
+  },
 };

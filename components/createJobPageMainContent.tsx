@@ -3,12 +3,10 @@
 
 import React from "react";
 import { Form } from "./ui/form";
-import { useAppDispatch, useAppSelector } from "@/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import localFont from "next/font/local";
 import { z } from "zod";
-import { setCreateJobState } from "@/store/jobCreateSlice";
 import { cn } from "@/lib/utils";
 import CreateJobStep1Form from "./createJobStep1Form";
 import { Button } from "./ui/button";
@@ -19,6 +17,7 @@ import useStore from "@/store/zuStore";
 import Separator from "./Separator";
 import TimeRequirementsForm from "./timeRequirementsForm";
 import JobLocationForm from "./jobLocationform";
+import ApplicationProcessForm from "./applicationProcessForm";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -75,6 +74,7 @@ const CreateJobPageMainContent = () => {
             {step === 1 ? <CreateJobStep1Form form={form} /> : null}
             {step === 2 ? <TimeRequirementsForm form={form} /> : null}
             {step === 3 ? <JobLocationForm form={form} /> : null}
+            {step === 4 ? <ApplicationProcessForm form={form} /> : null}
 
             <Separator />
 
