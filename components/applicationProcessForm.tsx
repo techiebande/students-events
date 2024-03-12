@@ -118,36 +118,7 @@ const ApplicationProcessForm = ({ form }: any) => {
           </FormItem>
         )}
       />
-      <FormField
-        control={form.control}
-        name="numberOfHires"
-        render={({ field }) => (
-          <FormItem className="mt-10">
-            <FormLabel className="text-sm poppins-semibold leading-5">
-              Number of hires
-              <span className="block text-sm text-gray-800 poppins-regular leading-5">
-                this will not show upto candidates
-              </span>
-            </FormLabel>
-            <div className="flex">
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger className="rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white">
-                    <SelectValue />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="1">1</SelectItem>
-                  <SelectItem value="3">3</SelectItem>
-                  <SelectItem value="5">5</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
 
-            {/* <FormMessage /> */}
-          </FormItem>
-        )}
-      />
       <div className="mt-10">
         <p className="text-sm poppins-semibold leading-5">
           Preferred method for candidates to submit their application?

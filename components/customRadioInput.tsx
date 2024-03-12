@@ -10,7 +10,7 @@ const CustomRadioInput = ({
 }: any) => {
   return (
     <label
-      className="text-gray-800 text-sm poppins-regular leading-5 flex items-center gap-3"
+      className="text-gray-800 text-xs sm:text-sm poppins-regular leading-5 flex items-center gap-3"
       htmlFor={value}
     >
       <input

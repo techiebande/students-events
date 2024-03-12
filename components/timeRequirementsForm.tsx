@@ -145,7 +145,7 @@ const TimeRequirementsForm = ({ form }: any) => {
         <div>
           <div className="mt-6">
             <p className="text-sm poppins-semibold leading-5">Duration</p>
-            <div className="mt-3 flex gap-6">
+            <div className="mt-3 grid grid-cols-2 gap-y-2 sm:flex gap-1 sm:gap-6">
               {durationValues.map((value, i) => {
                 return (
                   <CustomRadioInput
