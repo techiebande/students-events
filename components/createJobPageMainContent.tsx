@@ -18,6 +18,7 @@ import Separator from "./Separator";
 import TimeRequirementsForm from "./timeRequirementsForm";
 import JobLocationForm from "./jobLocationform";
 import ApplicationProcessForm from "./applicationProcessForm";
+import CategorizeJobForm from "./categorizeJobForm";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -74,7 +75,8 @@ const CreateJobPageMainContent = () => {
             {step === 1 ? <CreateJobStep1Form form={form} /> : null}
             {step === 2 ? <TimeRequirementsForm form={form} /> : null}
             {step === 3 ? <JobLocationForm form={form} /> : null}
-            {step === 4 ? <ApplicationProcessForm form={form} /> : null}
+            {step === 4 ? <CategorizeJobForm form={form} /> : null}
+            {step === 5 ? <ApplicationProcessForm form={form} /> : null}
 
             <Separator />
 

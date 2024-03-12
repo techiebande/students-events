@@ -30,6 +30,10 @@ const config = {
         gray300: "#D0D5DD",
         primary600: "#E31B54",
         primary500: "#F63D68",
+        primary400: "#FD6F8E",
+        primary200: "#FECDD6",
+        primary100: "#FFE4E8",
+        primary25: "#FFF5F6",
         companyBg:
           "linear-gradient(to right top, #fafbff, #f6f4fd, #f6ecf8, #f8e3ef, #fbdbe3)",
         seBg: "#F0F5FE",

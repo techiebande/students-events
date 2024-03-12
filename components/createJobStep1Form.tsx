@@ -22,7 +22,7 @@ const CreateJobStep1Form = ({ form }: any) => {
   const changePosition = (value: string) => setPosition(value);
 
   return (
-    <>
+    <div className="min-h-main-content-height">
       <FormField
         control={form.control}
         name="title"
@@ -91,7 +91,7 @@ const CreateJobStep1Form = ({ form }: any) => {
           </FormItem>
         )}
       />
-    </>
+    </div>
   );
 };
 

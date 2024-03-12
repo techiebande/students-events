@@ -12,6 +12,11 @@ export const createJobStepsData = {
     description: "Specifiy job location",
   },
   4: {
+    title: "Categorize job",
+    description:
+      "Add filters based on student interests and must-have qualifications to refine candidate matches.",
+  },
+  5: {
     title: "Application Process",
     description: "What’s hte application window and process?",
   },

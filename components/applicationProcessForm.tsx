@@ -39,7 +39,7 @@ const ApplicationProcessForm = ({ form }: any) => {
   );
 
   return (
-    <div className="mt-10 flex flex-col h-full">
+    <div className="mt-10 flex flex-col min-h-main-content-height">
       <FormField
         control={form.control}
         name="openDate"
