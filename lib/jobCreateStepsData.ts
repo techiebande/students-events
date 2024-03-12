@@ -20,4 +20,9 @@ export const createJobStepsData = {
     title: "Application Process",
     description: "What’s hte application window and process?",
   },
+  6: {
+    title: "One last check",
+    description:
+      "Confirm everything looks good before posting your job to varyance",
+  },
 };

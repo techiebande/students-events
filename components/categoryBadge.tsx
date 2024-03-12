@@ -3,13 +3,21 @@ import { Badge } from "./ui/badge";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const CategoryBadge = ({ icon, text }: { icon: string; text: string }) => {
-  const [selected, setSelected] = useState(false);
+const CategoryBadge = ({
+  icon,
+  text,
+  active,
+}: {
+  icon: string;
+  text: string;
+  active?: boolean;
+}) => {
+  const [selected, setSelected] = useState(() => (active ? true : false));
 
   const toggleSelect = () => setSelected((selected) => !selected);
   return (
     <Badge
-      onClick={toggleSelect}
+      onClick={active ? () => {} : toggleSelect}
       className={cn(
         !selected
           ? "bg-white text-gray-800 poppins-regular hover:bg-white"

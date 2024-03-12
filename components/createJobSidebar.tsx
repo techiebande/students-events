@@ -12,10 +12,15 @@ const CreateJobSidebar = () => {
         "hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] lg:w-[96px] xl:px-6 xl:w-[324px]"
       )}
     >
-      <p className="w-full sm:text-center xl:text-left text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4">
+      <p
+        className={cn(
+          step === 6 && "hidden",
+          "w-full sm:text-center xl:text-left text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4"
+        )}
+      >
         NEXT STEPS
       </p>
-      <div className="pt-5">
+      <div className={cn(step === 6 && "hidden", "pt-5")}>
         <FormSteps />
       </div>
       <div className={cn("mt-[44px] hidden xl:block")}>
@@ -30,7 +35,8 @@ const CreateJobSidebar = () => {
         <div
           className={cn(
             step !== 1 ? "hidden" : "",
-            "mt-5 text-primary500 text-xs poppins-semibold leading-4"
+            step === 6 ? "block mt-[49px]" : "mt-5",
+            " text-primary500 text-xs poppins-semibold leading-4"
           )}
         >
           <InternshipCard />

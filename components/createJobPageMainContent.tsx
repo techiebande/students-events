@@ -19,6 +19,7 @@ import TimeRequirementsForm from "./timeRequirementsForm";
 import JobLocationForm from "./jobLocationform";
 import ApplicationProcessForm from "./applicationProcessForm";
 import CategorizeJobForm from "./categorizeJobForm";
+import ReviewForm from "./reviewForm";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -77,6 +78,7 @@ const CreateJobPageMainContent = () => {
             {step === 3 ? <JobLocationForm form={form} /> : null}
             {step === 4 ? <CategorizeJobForm form={form} /> : null}
             {step === 5 ? <ApplicationProcessForm form={form} /> : null}
+            {step === 6 ? <ReviewForm /> : null}
 
             <Separator />
 
@@ -91,7 +93,13 @@ const CreateJobPageMainContent = () => {
                 onClick={nextStep}
                 className="gap-3 bg-primary600 hover:bg-primary600 py-[22px] px-[27.25px] leading-5"
               >
-                Continue <ChevronRightIcon />
+                {step === 6 ? (
+                  "Publish Job"
+                ) : (
+                  <>
+                    Continue <ChevronRightIcon />
+                  </>
+                )}
               </Button>
             </div>
           </form>
