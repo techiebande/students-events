@@ -14,13 +14,13 @@ const CreateJobSidebar = () => {
     >
       <p
         className={cn(
-          step === 6 && "hidden",
+          step > 5 && "hidden",
           "w-full sm:text-center xl:text-left text-gray-400 text-xs poppins-semibold tracking-[0.507px] leading-4"
         )}
       >
         NEXT STEPS
       </p>
-      <div className={cn(step === 6 && "hidden", "pt-5")}>
+      <div className={cn(step > 5 && "hidden", "pt-5")}>
         <FormSteps />
       </div>
       <div className={cn("mt-[44px] hidden xl:block")}>
@@ -35,7 +35,7 @@ const CreateJobSidebar = () => {
         <div
           className={cn(
             step !== 1 ? "hidden" : "",
-            step === 6 ? "block mt-[49px]" : "mt-5",
+            step > 5 ? "block mt-[49px]" : "mt-5",
             " text-primary500 text-xs poppins-semibold leading-4"
           )}
         >

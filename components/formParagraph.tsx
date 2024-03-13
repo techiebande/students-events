@@ -1,9 +1,22 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-export const ParagraphHead = ({ children }: { children: React.ReactNode }) => {
+export const ParagraphHead = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <p className="text-gray-950 poppins-medium text-sm leading-5">{children}</p>
+    <p
+      className={cn(
+        "text-gray-950 poppins-medium text-sm leading-5",
+        className
+      )}
+    >
+      {children}
+    </p>
   );
 };
 
@@ -12,13 +25,13 @@ export const ParagraphBody = ({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
   return (
     <p
       className={cn(
-        className,
-        "text-gray-800 text-sm poppins-regular leading-5"
+        "text-gray-800 text-sm poppins-regular leading-5",
+        className
       )}
     >
       {children}

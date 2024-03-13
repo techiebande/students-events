@@ -20,6 +20,7 @@ import JobLocationForm from "./jobLocationform";
 import ApplicationProcessForm from "./applicationProcessForm";
 import CategorizeJobForm from "./categorizeJobForm";
 import ReviewForm from "./reviewForm";
+import HiringTeamForm from "./hiringTeamForm";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -79,22 +80,25 @@ const CreateJobPageMainContent = () => {
             {step === 4 ? <CategorizeJobForm form={form} /> : null}
             {step === 5 ? <ApplicationProcessForm form={form} /> : null}
             {step === 6 ? <ReviewForm /> : null}
+            {step === 7 ? <HiringTeamForm form={form} /> : null}
 
             <Separator />
 
-            <div className="flex items-center justify-between sm:justify-end sm:gap-6 mt-5">
+            <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center gap-6  sm:justify-end sm:gap-6 mt-5">
               <Button
                 onClick={prevStep}
-                className="bg-white hover:bg-white border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5"
+                className="bg-white hover:bg-white min-w-[184px] border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5"
               >
-                Back
+                {step === 7 ? "Back to dashboard" : "Back"}
               </Button>
               <Button
                 onClick={nextStep}
-                className="gap-3 bg-primary600 hover:bg-primary600 py-[22px] px-[27.25px] leading-5"
+                className="gap-3 bg-primary600 min-w-[184px] hover:bg-primary600 py-[22px] px-[27.25px] leading-5"
               >
                 {step === 6 ? (
                   "Publish Job"
+                ) : step === 7 ? (
+                  "Post another job"
                 ) : (
                   <>
                     Continue <ChevronRightIcon />

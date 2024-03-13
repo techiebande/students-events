@@ -18,11 +18,16 @@ export const createJobStepsData = {
   },
   5: {
     title: "Application Process",
-    description: "What’s hte application window and process?",
+    description: "What's hte application window and process?",
   },
   6: {
     title: "One last check",
     description:
       "Confirm everything looks good before posting your job to varyance",
+  },
+  7: {
+    title: "Your Hiring Team",
+    description:
+      "Get your hiring team organized so that everyone stays in the loop and manage how they get updates.",
   },
 };

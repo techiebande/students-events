@@ -34,6 +34,11 @@ const config = {
         primary200: "#FECDD6",
         primary100: "#FFE4E8",
         primary25: "#FFF5F6",
+        success700: "#067647",
+        success200: "#ABEFC6",
+        success100: "#ECFDF3",
+        success500: "#17B26A",
+        error400: "#F97066",
         companyBg:
           "linear-gradient(to right top, #fafbff, #f6f4fd, #f6ecf8, #f8e3ef, #fbdbe3)",
         seBg: "#F0F5FE",
