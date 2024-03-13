@@ -12,6 +12,7 @@ const FormSteps = () => {
         current
         title="Job description"
         description="please provide your name and email"
+        first
       />
       <FormStep
         Icon={step > 1 ? "/icons/Clock-active.svg" : "/icons/Clock.svg"}
@@ -39,7 +40,6 @@ const FormSteps = () => {
         }
         title="Application Process"
         description="Dates and documents"
-        last
         current={step > 4}
       />
     </div>
