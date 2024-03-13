@@ -29,6 +29,7 @@ const config = {
         gray500: "#667085",
         gray300: "#D0D5DD",
         primary600: "#E31B54",
+        primary700: "#C01048",
         primary500: "#F63D68",
         primary400: "#FD6F8E",
         primary200: "#FECDD6",
@@ -38,6 +39,7 @@ const config = {
         success200: "#ABEFC6",
         success100: "#ECFDF3",
         success500: "#17B26A",
+        success600: "#079455",
         error400: "#F97066",
         companyBg:
           "linear-gradient(to right top, #fafbff, #f6f4fd, #f6ecf8, #f8e3ef, #fbdbe3)",

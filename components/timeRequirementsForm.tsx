@@ -87,7 +87,12 @@ const TimeRequirementsForm = ({ form }: any) => {
                 <div className="flex">
                   <FormControl className="">
                     <Input
-                      className="mt-2 sm:mt-3 mr-2 md:mr-8 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                      className={cn(
+                        "mt-2 sm:mt-3 mr-2 md:mr-8 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                        field.value.length > 0
+                          ? "border-gray-600"
+                          : "border-gray300"
+                      )}
                       {...field}
                     />
                   </FormControl>
@@ -98,7 +103,14 @@ const TimeRequirementsForm = ({ form }: any) => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="mt-2 sm:mt-3 ml-2 md:ml-8 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white">
+                      <SelectTrigger
+                        className={cn(
+                          "mt-2 sm:mt-3 ml-2 md:ml-8 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                          field.value.length > 0
+                            ? "border-gray-600"
+                            : "border-gray300"
+                        )}
+                      >
                         <SelectValue />
                       </SelectTrigger>
                     </FormControl>
@@ -168,7 +180,13 @@ const TimeRequirementsForm = ({ form }: any) => {
                 <FormItem className="flex flex-col">
                   <FormLabel>Estimated start date</FormLabel>
                   <Popover>
-                    <PopoverTrigger asChild>
+                    <PopoverTrigger
+                      asChild
+                      className={cn(
+                        field.value ? "border-gray-600" : "border-gray-300",
+                        "border"
+                      )}
+                    >
                       <FormControl>
                         <Button
                           variant={"outline"}
@@ -207,7 +225,13 @@ const TimeRequirementsForm = ({ form }: any) => {
                 <FormItem className="flex flex-col">
                   <FormLabel>Estimated start date</FormLabel>
                   <Popover>
-                    <PopoverTrigger asChild>
+                    <PopoverTrigger
+                      asChild
+                      className={cn(
+                        field.value ? "border-gray-600" : "border-gray-300",
+                        "border"
+                      )}
+                    >
                       <FormControl>
                         <Button
                           variant={"outline"}

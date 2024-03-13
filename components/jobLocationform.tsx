@@ -14,6 +14,7 @@ import { Input } from "./ui/input";
 import { Cross1Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Badge } from "./ui/badge";
 import CustomCheckbox from "./customCheckbox";
+import { cn } from "@/lib/utils";
 
 const JobLocationForm = ({ form }: any) => {
   const [useAsDefault, setUseAsDefault] = useState();
@@ -92,7 +93,12 @@ const JobLocationForm = ({ form }: any) => {
 
                 <FormControl>
                   <Input
-                    className="mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                    className={cn(
+                      "mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                      field.value.length > 0
+                        ? "border-gray-600"
+                        : "border-gray300"
+                    )}
                     {...field}
                   />
                 </FormControl>

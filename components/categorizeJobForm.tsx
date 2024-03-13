@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import CustomCheckbox from "./customCheckbox";
+import { cn } from "@/lib/utils";
 
 const CategorizeJobForm = ({ form }: any) => {
   const [useAsDefault, setUseAsDefault] = useState();
@@ -67,7 +68,12 @@ const CategorizeJobForm = ({ form }: any) => {
             <FormItem className="mt-3 bg-white mb-3">
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger
+                    className={cn(
+                      field.value ? "border-gray-600" : "border-gray300",
+                      "border"
+                    )}
+                  >
                     <SelectValue placeholder="Language" />
                   </SelectTrigger>
                 </FormControl>

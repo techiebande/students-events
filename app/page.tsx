@@ -79,8 +79,8 @@ export default function Home() {
             </p>
           </div>
           <div className="col-span-1 md:ml-auto">
-            <Button className="bg-primary600 flex gap-3 mt-4 md:mt-0 md:ml-auto">
-              <PlusIcon />
+            <Button className="bg-primary600 flex gap-3 mt-4 md:mt-0 md:ml-auto hover:bg-primary700">
+              <PlusIcon className="w-5 h-5" />
               Create New Challenge
             </Button>
           </div>

@@ -21,6 +21,7 @@ import ApplicationProcessForm from "./applicationProcessForm";
 import CategorizeJobForm from "./categorizeJobForm";
 import ReviewForm from "./reviewForm";
 import HiringTeamForm from "./hiringTeamForm";
+import { useRouter } from "next/navigation";
 
 const filmoType = localFont({
   src: "../public/fonts/filmotype.woff2",
@@ -35,6 +36,7 @@ const formSchema = z.object({
 });
 
 const CreateJobPageMainContent = () => {
+  const router = useRouter();
   const nextStep = useStore((state) => state.nextStep);
   const prevStep = useStore((state) => state.prevStep);
 
@@ -53,7 +55,7 @@ const CreateJobPageMainContent = () => {
     // console.log(values);
   }
   return (
-    <div className="flex min-h-main-content-height">
+    <div id="top" className="flex min-h-main-content-height">
       <div className="bg-seBg min-h-full w-full pt-5 px-5 pb-[84px] sm:pb-[130px] sm:px-[30px] md:px-10 lg:px-[60px] sm:pt-8 md:pt-[52px] lg:pt-10 md:w-[90vw] lg:w-lgSidebar xl:w-2xlSidebar">
         <Form {...form}>
           <form
@@ -86,14 +88,21 @@ const CreateJobPageMainContent = () => {
 
             <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center gap-6  sm:justify-end sm:gap-6 mt-5">
               <Button
-                onClick={prevStep}
-                className="bg-white hover:bg-white min-w-[184px] border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5"
+                onClick={() => {
+                  prevStep();
+                  router.push("#top");
+                }}
+                disabled={step < 2}
+                className="bg-white hover:bg-white hover:border-gray-300 hover:shadow-stats border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5 disabled:opacity-[0.3]"
               >
                 {step === 7 ? "Back to dashboard" : "Back"}
               </Button>
               <Button
-                onClick={nextStep}
-                className="gap-3 bg-primary600 min-w-[184px] hover:bg-primary600 py-[22px] px-[27.25px] leading-5"
+                onClick={() => {
+                  nextStep();
+                  router.push("#top");
+                }}
+                className="gap-3 bg-primary600 hover:bg-primary700 py-[22px] px-[27.25px] leading-5 disabled:bg-primary300 disabled:opacity-[0.25]"
               >
                 {step === 6 ? (
                   "Publish Job"

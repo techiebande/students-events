@@ -10,6 +10,7 @@ import { FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 import TeamMember from "./teamMember";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export const teamMembers = [
   {
@@ -132,28 +133,39 @@ const HiringTeamForm = ({ form }: any) => {
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
-                <FormItem className=" relative">
-                  <FormLabel className="text-sm poppins-semibold leading-5 flex justify-between">
-                    Recruiting Team members (optional)
-                    <span className="text-sm leading-5 poppins-medium text-primary600 cursor-pointer">
-                      Invite new teammate (copy invitite link)
-                    </span>
-                  </FormLabel>
+              render={({ field }) => {
+                field = {
+                  ...field,
+                  onChange: (e) => {
+                    setSearchTerm(e.target.value);
+                  },
+                  value: searchTerm,
+                };
+                return (
+                  <FormItem className=" relative">
+                    <FormLabel className="text-sm poppins-semibold leading-5 flex justify-between">
+                      Recruiting Team members (optional)
+                      <span className="text-sm leading-5 poppins-medium text-primary600 cursor-pointer">
+                        Invite new teammate (copy invitite link)
+                      </span>
+                    </FormLabel>
 
-                  <FormControl>
-                    <Input
-                      onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                      }}
-                      className="mt-3 py-5 px-[12px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
-                      // {...field}
-                    />
-                  </FormControl>
-                  {/* <FormMessage /> */}
-                  <MagnifyingGlassIcon className="absolute w-5 h-5 top-[35px] right-[10px]" />
-                </FormItem>
-              )}
+                    <FormControl>
+                      <Input
+                        className={cn(
+                          searchTerm.length > 0
+                            ? "border-gray-600"
+                            : "border-gray300",
+                          "mt-3 py-5 px-[12px] rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                        )}
+                        {...field}
+                      />
+                    </FormControl>
+                    {/* <FormMessage /> */}
+                    <MagnifyingGlassIcon className="absolute w-5 h-5 top-[35px] right-[10px]" />
+                  </FormItem>
+                );
+              }}
             />
             <div className="overflow-x-auto">
               {searchedTeamMembers.length < 1 ? (

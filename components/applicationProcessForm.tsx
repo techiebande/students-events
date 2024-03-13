@@ -47,7 +47,13 @@ const ApplicationProcessForm = ({ form }: any) => {
           <FormItem className="flex flex-col">
             <FormLabel>Application open date</FormLabel>
             <Popover>
-              <PopoverTrigger asChild>
+              <PopoverTrigger
+                asChild
+                className={cn(
+                  field.value ? "border-gray-600" : "border-gray-300",
+                  "border"
+                )}
+              >
                 <FormControl>
                   <Button
                     variant={"outline"}
@@ -86,7 +92,13 @@ const ApplicationProcessForm = ({ form }: any) => {
           <FormItem className="flex flex-col mt-10">
             <FormLabel>Application close date</FormLabel>
             <Popover>
-              <PopoverTrigger asChild>
+              <PopoverTrigger
+                asChild
+                className={cn(
+                  field.value ? "border-gray-600" : "border-gray-300",
+                  "border"
+                )}
+              >
                 <FormControl>
                   <Button
                     variant={"outline"}
@@ -191,7 +203,10 @@ const ApplicationProcessForm = ({ form }: any) => {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className="mt-3 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                    className={cn(
+                      "mt-3 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                      field.value ? "border-gray-600" : "border-gray300"
+                    )}
                     {...field}
                     placeholder="hhtps://www.website.com"
                   />
@@ -209,7 +224,14 @@ const ApplicationProcessForm = ({ form }: any) => {
                   Instructions for applicants
                 </FormLabel>
                 <FormControl>
-                  <Textarea className="mt-10 bg-white" rows={5} {...field} />
+                  <Textarea
+                    className={cn(
+                      field.value ? "border-gray-600" : "border-gray300",
+                      "mt-10 bg-white border"
+                    )}
+                    rows={5}
+                    {...field}
+                  />
                 </FormControl>
 
                 {/* <FormMessage /> */}

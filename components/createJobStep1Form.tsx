@@ -14,6 +14,7 @@ import { jobPositionvalues } from "@/lib/jobPositionValues";
 import { Input } from "./ui/input";
 import CustomCheckbox from "./customCheckbox";
 import CustomRadioInput from "./customRadioInput";
+import { cn } from "@/lib/utils";
 
 const CreateJobStep1Form = ({ form }: any) => {
   const [position, setPosition] = useState<string>("");
@@ -33,7 +34,10 @@ const CreateJobStep1Form = ({ form }: any) => {
             </FormLabel>
             <FormControl>
               <Input
-                className="mt-3 py-5 px-[14px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                className={cn(
+                  "mt-3 py-5 px-[14px] rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                  field.value.length > 0 ? "border-gray-600" : "border-gray300"
+                )}
                 {...field}
               />
             </FormControl>

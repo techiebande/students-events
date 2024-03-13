@@ -76,10 +76,10 @@ const Usercard = () => {
         </div>
       </div>
       <div className="flex items-center gap-4 mt-6">
-        <Button className="w-[133px] bg-[transparent] text-[#475467] hover:bg-transparent rounded-[6px]">
+        <Button className="w-[133px] bg-[transparent] text-[#475467] hover:bg-transparent rounded-[6px] hover:shadow-stats">
           Message
         </Button>
-        <Button className="w-[133px] bg-[#079455] hover:bg-[#079455] rounded-[6px]">
+        <Button className="w-[133px] bg-success600 hover:bg-green-700 rounded-[6px]">
           saved
         </Button>
       </div>

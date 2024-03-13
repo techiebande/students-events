@@ -22,7 +22,7 @@ const CreateJobPageHeader = () => {
       <div className="flex gap-2 items-center sm:gap-10">
         <Button
           variant="ghost"
-          className="text-xs leading-4 text-gray950 poppins-semibold px-0 sm:leading-5 sm:text-sm"
+          className="text-xs leading-4 text-gray950 poppins-semibold px-0 sm:leading-5 sm:text-sm hover:bg-transparent"
         >
           Save as draft
         </Button>
