@@ -148,7 +148,7 @@ const CompanyLoginPage = () => {
               </div>
               <div className="mt-6">
                 <ParagraphBody className="text-center">
-                  Don't have an account?{" "}
+                  Dont have an account?{" "}
                   <span className="text-primary600 poppins-semibold text-sm leading-5">
                     Sign up
                   </span>
