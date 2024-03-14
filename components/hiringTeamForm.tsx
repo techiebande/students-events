@@ -11,6 +11,7 @@ import { Input } from "./ui/input";
 import TeamMember from "./teamMember";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Table } from "./ui/table";
 
 export const teamMembers = [
   {
@@ -188,18 +189,22 @@ const HiringTeamForm = ({ form }: any) => {
                   </ParagraphBody>
                 </div>
               ) : null}
-              {searchedTeamMembers.length > 0 && searchTerm.length > 0
-                ? searchedTeamMembers.map((member, i, teamMembers) => {
-                    return (
-                      <TeamMember
-                        key={i}
-                        teamMember={member}
-                        total={teamMembers.length}
-                        index={i}
-                      />
-                    );
-                  })
-                : null}
+              {searchedTeamMembers.length > 0 && searchTerm.length > 0 ? (
+                <>
+                  <Table className="mt-6">
+                    {searchedTeamMembers.map((member, i, teamMembers) => {
+                      return (
+                        <TeamMember
+                          key={i}
+                          teamMember={member}
+                          total={teamMembers.length}
+                          index={i}
+                        />
+                      );
+                    })}
+                  </Table>
+                </>
+              ) : null}
             </div>
           </FormParagraph>
         ) : null}

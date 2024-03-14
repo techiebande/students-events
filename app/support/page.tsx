@@ -1,6 +1,5 @@
 import CompanyLogo from "@/components/companyLogo";
 import { ParagraphBody, ParagraphHead } from "@/components/formParagraph";
-import JobType from "@/components/jobType";
 import Paper from "@/components/paper";
 import { cn } from "@/lib/utils";
 import { Cross1Icon } from "@radix-ui/react-icons";

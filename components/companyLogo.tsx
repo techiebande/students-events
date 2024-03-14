@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -16,6 +17,7 @@ const CompanyLogo = ({
       alt="company logo"
       width={width || 36}
       height={height || 36}
+      className={cn(className)}
     />
   );
 };
