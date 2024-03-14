@@ -51,7 +51,7 @@ const CompanyLoginPage = () => {
 
   return (
     <div className="h-[100vh] flex justify-center lg:justify-start">
-      <div className="bg-white w-[57%] pt-10 flex flex-col px-4 lg:pr-[130px] lg:pl-20 xl:pr-40 xl:pl-36 2xl:pr-60">
+      <div className="bg-white w-full px-4 lg:w-[57%] pt-10 flex flex-col  lg:pr-[130px] lg:pl-20 xl:pr-40 xl:pl-36 2xl:pr-60">
         <CompanyLogo />
         <div className="mt-[30px]">
           <PageHeadSection
@@ -133,7 +133,7 @@ const CompanyLoginPage = () => {
               />
               <div className="mt-2 flex items-end justify-between">
                 <CustomCheckbox
-                  value={rememberFor30Days}
+                  value={rememberFor30Days.toString()}
                   label={"Remember for 30 days"}
                   isChecked={rememberFor30Days}
                   setIsChecked={setRememberFor30Days}
