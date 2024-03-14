@@ -107,8 +107,12 @@ const CompanyLoginPage = () => {
                           {...field}
                         />
                         {passwordVisible ? (
-                          <EyeClosedIcon
+                          <Image
                             onClick={togglePasswordVisibilty}
+                            src="/icons/eye-closed.svg"
+                            width={20}
+                            height={20}
+                            alt=""
                             className="absolute top-[11px] right-[12px] cursor-pointer"
                           />
                         ) : (
