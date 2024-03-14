@@ -45,7 +45,7 @@ const TimeRequirementsForm = ({ form }: any) => {
   const changeDuration = useStore((state) => state.changeDuration);
 
   return (
-    <div className="min-h-main-content-height mt-10 flex flex-col">
+    <div className=" mt-10 flex flex-col">
       <div className="grid grid-cols-2 gap-5">
         <JobType
           change={changeJobTimeRequirements}
@@ -267,7 +267,7 @@ const TimeRequirementsForm = ({ form }: any) => {
         </div>
       ) : null}
 
-      <div className="mt-auto mb-3">
+      <div className="mt-10">
         <CustomCheckbox
           label="Set this as default values for future job posts."
           isChecked={useAsDefault}

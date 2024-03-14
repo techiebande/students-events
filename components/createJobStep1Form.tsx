@@ -23,7 +23,7 @@ const CreateJobStep1Form = ({ form }: any) => {
   const changePosition = (value: string) => setPosition(value);
 
   return (
-    <div className="min-h-main-content-height">
+    <div>
       <FormField
         control={form.control}
         name="title"
@@ -79,13 +79,13 @@ const CreateJobStep1Form = ({ form }: any) => {
           <FormItem className="mt-5 sm:mt-10 mb-10">
             <FormLabel className="text-sm poppins-semibold leading-5">
               Job description
-              <p className="text-gray-800 text-xs leading-4 poppins-regular mt-1 flex justify-center sm:text-sm sm:leading-5 ">
+              {/* <p className="text-gray-800 text-xs leading-4 poppins-regular mt-1 flex justify-center sm:text-sm sm:leading-5 ">
                 Be sure to include specific skills you’re looking for, minimum
                 requirements, and expected responsibilities.
                 <span className="text-primary600 text-sm poppins-semibold hidden ml-auto sm:inline-block ">
                   Copy description from exsisting job
                 </span>
-              </p>
+              </p> */}
             </FormLabel>
 
             <FormControl>

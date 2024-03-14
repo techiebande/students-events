@@ -9,7 +9,10 @@ const CreateJobSidebar = () => {
   return (
     <div
       className={cn(
-        "hidden min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 md:flex flex-col md:w-[10vw] lg:w-[96px] xl:px-6 xl:w-[324px]"
+        step === 6
+          ? "hidden"
+          : "hidden md:flex md:w-[10vw] lg:w-[96px] xl:px-6 xl:w-[324px]",
+        "min-h-full bg-gradient-to-b from-[#F8F1F3] to-[#FFF6F8] pt-10 flex-col "
       )}
     >
       <p

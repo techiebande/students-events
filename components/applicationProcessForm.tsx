@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
@@ -9,7 +9,7 @@ import { Calendar } from "./ui/calendar";
 import JobType from "./jobType";
 import useStore from "@/store/zuStore";
 import Separator from "./Separator";
-import { varyanceRequiredDocumentsValues } from "@/lib/varyanceRequiredDocumentsValues";
+// import { varyanceRequiredDocumentsValues } from "@/lib/varyanceRequiredDocumentsValues";
 import CustomRadioInput from "./customRadioInput";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import CustomCheckbox from "./customCheckbox";
 
 const ApplicationProcessForm = ({ form }: any) => {
   const preferedJobApplicationSubmissionMethod = useStore(
@@ -38,8 +39,46 @@ const ApplicationProcessForm = ({ form }: any) => {
     (state) => state.changeRequiredApplicationDocuments
   );
 
+  const [useAsDefault, setUseAsDefault] = useState();
+  const [
+    isVaryanceStudentprofileRequired,
+    setIsVaryanceStudentprofileRequired,
+  ] = useState(false);
+  const [isCVRequired, setIsCVRequired] = useState(false);
+  const [isCoverLetterRequired, setIsCoverLetterRequired] = useState(false);
+  const [isTranscriptRequired, setIsTranscriptRequired] = useState(false);
+  const [isOtherRequired, setIsOtherRequired] = useState(false);
+
+  const varyanceRequiredDocumentsValues = [
+    {
+      label: "Varyance student profile",
+      value: isVaryanceStudentprofileRequired,
+      fn: setIsVaryanceStudentprofileRequired,
+    },
+    {
+      label: "CV",
+      value: isCVRequired,
+      fn: setIsCVRequired,
+    },
+    {
+      label: "Cover letter",
+      value: isCoverLetterRequired,
+      fn: setIsCoverLetterRequired,
+    },
+    {
+      label: "Transcript",
+      value: isTranscriptRequired,
+      fn: setIsTranscriptRequired,
+    },
+    {
+      label: "Other",
+      value: isOtherRequired,
+      fn: setIsOtherRequired,
+    },
+  ];
+
   return (
-    <div className="mt-10 flex flex-col min-h-main-content-height">
+    <div className="mt-10 flex flex-col">
       <FormField
         control={form.control}
         name="openDate"
@@ -176,13 +215,12 @@ const ApplicationProcessForm = ({ form }: any) => {
             <div className="mt-3 flex flex-col gap-4">
               {varyanceRequiredDocumentsValues.map((value, i) => {
                 return (
-                  <CustomRadioInput
-                    key={value + i}
-                    name="requiredApplicationDocuments"
-                    value={value}
-                    label={value}
-                    position={requiredApplicationDocuments}
-                    changePosition={changeRequiredApplicationDocuments}
+                  <CustomCheckbox
+                    key={value.label + i}
+                    value={value.value}
+                    label={value.label}
+                    isChecked={value.value}
+                    setIsChecked={value.fn}
                   />
                 );
               })}
@@ -241,7 +279,13 @@ const ApplicationProcessForm = ({ form }: any) => {
         </>
       ) : null}
 
-      <Separator />
+      <div className="mt-10">
+        <CustomCheckbox
+          label="Set this as default values for future job posts."
+          isChecked={useAsDefault}
+          setIsChecked={setUseAsDefault}
+        />
+      </div>
     </div>
   );
 };

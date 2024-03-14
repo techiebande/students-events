@@ -87,7 +87,7 @@ const ReviewForm = () => {
         </FormParagraph>
         <FormParagraph className="mt-6">
           <ParagraphHead>Skills</ParagraphHead>
-          <ParagraphBody className="mt-3 flex gap-3">
+          <ParagraphBody className="mt-3 flex flex-wrap gap-3">
             <p>Permanent</p>
             <p>Permanent</p>
             <p>Permanent</p>

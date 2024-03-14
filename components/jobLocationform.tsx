@@ -33,7 +33,7 @@ const JobLocationForm = ({ form }: any) => {
   };
 
   return (
-    <div className="mt-10 min-h-main-content-height flex flex-col">
+    <div className="mt-10 flex flex-col">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:flex-wrap mb-3">
         <JobType
           change={changeJobLocation}
@@ -92,22 +92,24 @@ const JobLocationForm = ({ form }: any) => {
                 </FormLabel>
 
                 <FormControl>
-                  <Input
-                    className={cn(
-                      "mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
-                      field.value.length > 0
-                        ? "border-gray-600"
-                        : "border-gray300"
-                    )}
-                    {...field}
-                  />
+                  <div className="relative">
+                    <Input
+                      className={cn(
+                        "mt-3 py-5 px-[36px] rounded-[8px] border border-gray300 focus:outline-none outline-none leading-6 poppins-medium bg-white",
+                        field.value.length > 0
+                          ? "border-gray-600"
+                          : "border-gray300"
+                      )}
+                      {...field}
+                    />
+                    <MagnifyingGlassIcon className="absolute w-5 h-5 top-[11px] left-[10px]" />
+                  </div>
                 </FormControl>
                 {/* <FormMessage /> */}
-                <MagnifyingGlassIcon className="absolute w-5 h-5 top-[60px] left-[10px]" />
               </FormItem>
             )}
           />
-          <div className="mt-3 mb-[100px]">
+          <div className="mt-3">
             {locations.map((location) => {
               return (
                 <Badge
@@ -126,7 +128,7 @@ const JobLocationForm = ({ form }: any) => {
         </>
       ) : null}
 
-      <div className="mt-auto mb-3">
+      <div className="mt-14">
         <CustomCheckbox
           label="Set this as default values for future job posts."
           isChecked={useAsDefault}

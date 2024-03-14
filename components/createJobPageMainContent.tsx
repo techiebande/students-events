@@ -55,8 +55,15 @@ const CreateJobPageMainContent = () => {
     // console.log(values);
   }
   return (
-    <div id="top" className="flex min-h-main-content-height">
-      <div className="bg-seBg min-h-full w-full pt-5 px-5 pb-[84px] sm:pb-[130px] sm:px-[30px] md:px-10 lg:px-[60px] sm:pt-8 md:pt-[52px] lg:pt-10 md:w-[90vw] lg:w-lgSidebar xl:w-2xlSidebar">
+    <div id="top" className={cn("flex min-h-main-content-height")}>
+      <div
+        className={cn(
+          step === 6
+            ? "w-full"
+            : "w-full md:w-[90vw] xl:w-2xlSidebar lg:w-lgSidebar",
+          "bg-seBg min-h-full pt-5 px-5 pb-[84px] sm:pb-[130px] sm:px-[30px] md:px-10 lg:px-[60px] sm:pt-8 md:pt-[52px] lg:pt-10"
+        )}
+      >
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -87,16 +94,18 @@ const CreateJobPageMainContent = () => {
             <Separator />
 
             <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center gap-6  sm:justify-end sm:gap-6 mt-5">
-              <Button
-                onClick={() => {
-                  prevStep();
-                  router.push("#top");
-                }}
-                disabled={step < 2}
-                className="bg-white hover:bg-white hover:border-gray-300 hover:shadow-stats border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5 disabled:opacity-[0.3]"
-              >
-                {step === 7 ? "Back to dashboard" : "Back"}
-              </Button>
+              {step !== 1 ? (
+                <Button
+                  onClick={() => {
+                    prevStep();
+                    router.push("#top");
+                  }}
+                  disabled={step < 2}
+                  className="bg-white hover:bg-white hover:border-gray-300 hover:shadow-stats border border-gray-300 shadow-none text-gray-600 py-[22px] px-[27.25px] leading-5 disabled:opacity-[0.3]"
+                >
+                  {step === 7 ? "Back to dashboard" : "Back"}
+                </Button>
+              ) : null}
               <Button
                 onClick={() => {
                   nextStep();

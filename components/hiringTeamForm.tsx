@@ -151,18 +151,21 @@ const HiringTeamForm = ({ form }: any) => {
                     </FormLabel>
 
                     <FormControl>
-                      <Input
-                        className={cn(
-                          searchTerm.length > 0
-                            ? "border-gray-600"
-                            : "border-gray300",
-                          "mt-3 py-5 px-[12px] rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white"
-                        )}
-                        {...field}
-                      />
+                      <div className="relative">
+                        <Input
+                          className={cn(
+                            searchTerm.length > 0
+                              ? "border-gray-600"
+                              : "border-gray300",
+                            "mt-3 py-5 px-[12px] rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                          )}
+                          {...field}
+                        />
+                        <MagnifyingGlassIcon className="absolute w-5 h-5 top-[11px] right-[10px]" />
+                      </div>
                     </FormControl>
+
                     {/* <FormMessage /> */}
-                    <MagnifyingGlassIcon className="absolute w-5 h-5 top-[35px] right-[10px]" />
                   </FormItem>
                 );
               }}
@@ -202,7 +205,7 @@ const HiringTeamForm = ({ form }: any) => {
         ) : null}
       </Paper>
       <FormParagraph className="mt-6">
-        <div className="mt-auto mb-3">
+        <div className="mt-10">
           <CustomCheckbox
             label="Set this as default values for future job posts."
             isChecked={useAsDefault}

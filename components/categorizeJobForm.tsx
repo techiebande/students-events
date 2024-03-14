@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 const CategorizeJobForm = ({ form }: any) => {
   const [useAsDefault, setUseAsDefault] = useState();
   return (
-    <div className="mt-10 min-h-main-content-height flex flex-col">
+    <div className="mt-10 flex flex-col">
       <div>
         <p className="text-sm text-gray-950 poppins-semibold leading-5">
           Student Interests
@@ -89,7 +89,7 @@ const CategorizeJobForm = ({ form }: any) => {
           )}
         />
       </div>
-      <div className="mt-auto mb-3">
+      <div className="mt-10">
         <CustomCheckbox
           label="Set this as default values for future job posts."
           isChecked={useAsDefault}
