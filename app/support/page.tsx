@@ -64,7 +64,10 @@ const SupportCard = ({
     <Paper
       onMouseLeave={mouseLeave}
       onMouseEnter={mouseEnter}
-      className={cn(!hovered ? "opacity-60" : "", "p-6 sm:w-[374px] w-[300px]")}
+      className={cn(
+        !hovered ? "opacity-60" : "",
+        "p-6 sm:w-[374px] w-[300px] cursor-pointer"
+      )}
     >
       <Image src={hovered ? iconActive : icon} width={32} height={32} alt="" />
       <ParagraphHead
