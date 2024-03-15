@@ -8,6 +8,7 @@ export const teamMembers = [
     country: "United Kingdom",
     registerStatus: "Registered",
     image: "/icons/avatar.png",
+    department: "Marketing",
   },
   {
     name: "Jennifer Cooper",
@@ -18,6 +19,7 @@ export const teamMembers = [
     country: "United Kingdom",
     registerStatus: "Registered",
     image: "/icons/avatar.png",
+    department: "Marketing",
   },
   {
     name: "Jennifer Cooper",
@@ -27,6 +29,7 @@ export const teamMembers = [
     office: "London Office",
     country: "United Kingdom",
     registerStatus: "Pending",
+    department: "Marketing",
     image: "/icons/avatar.png",
   },
 ];

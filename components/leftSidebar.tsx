@@ -48,7 +48,7 @@ const LeftSidebar = () => {
       )}
     >
       <CompanyLogo className="mx-auto xl:mx-[unset]" />
-      <div className="flex gap-6 flex-col items-center xl:items-start mt-[42px]">
+      {/* <div className="flex gap-6 flex-col items-center xl:items-start mt-[42px]">
         {leftSidebarItems.map((item, i) => {
           return <SidebarItem key={i} item={item} />;
         })}
@@ -63,7 +63,7 @@ const LeftSidebar = () => {
       </div>
       <div className="hidden xl:block mt-[32px]">
         <CompanyCard />
-      </div>
+      </div> */}
     </div>
   );
 };

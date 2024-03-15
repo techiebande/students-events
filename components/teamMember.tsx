@@ -27,8 +27,8 @@ const TeamMember = ({ teamMember, total, index }: any) => {
 
   return (
     <>
-      <TableRow className="">
-        <TableCell>
+      <TableRow className={cn("p-10")}>
+        <TableCell className="py-4">
           <div className="flex items-end gap-4">
             <Avatar className="border border-[#fff]">
               <AvatarImage className="w-[100px]" src={teamMember.image} />
@@ -37,18 +37,18 @@ const TeamMember = ({ teamMember, total, index }: any) => {
             <Field title={teamMember.name} content={teamMember.email} />
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell className="py-4">
           <Field title={teamMember.title} content={teamMember.company} />
         </TableCell>
-        <TableCell>
+        <TableCell className="py-4">
           <Field title={teamMember.office} content={teamMember.country} />
         </TableCell>
-        <TableCell className="text-right">
+        <TableCell className="text-right py-4">
           <p className="text-left poppins-semibold text-sm">
             {teamMember.department}
           </p>
         </TableCell>
-        <TableCell>
+        <TableCell className="py-4">
           <div>
             <Badge
               className={cn(
@@ -70,7 +70,7 @@ const TeamMember = ({ teamMember, total, index }: any) => {
             </Badge>
           </div>
         </TableCell>
-        <TableCell>
+        <TableCell className="py-4">
           <CustomCheckbox
             label=""
             isChecked={addToRecruitingTeamMembers}

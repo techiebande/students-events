@@ -157,61 +157,6 @@ const InviteTeampage = () => {
                       );
                     }}
                   />
-                  <div className="mt-6 flex flex-col gap-y-4 lg:flex-row lg:items-end lg:justify-between">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
-                        All time <Cross1Icon />
-                      </Badge>
-                      <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
-                        US, AU +4 <Cross1Icon />
-                      </Badge>
-                      <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
-                        <Image
-                          alt=""
-                          src="/icons/filter-lines.svg"
-                          width={20}
-                          height={20}
-                        />
-                        More filters
-                      </Badge>
-                    </div>
-                    <div>
-                      <FormField
-                        control={form.control}
-                        name="title"
-                        render={({ field }) => {
-                          field = {
-                            ...field,
-                            onChange: (e) => {
-                              setSearchTerm(e.target.value);
-                            },
-                            value: searchTerm,
-                          };
-                          return (
-                            <FormItem className=" relative">
-                              <FormControl>
-                                <div className="relative">
-                                  <Input
-                                    className={cn(
-                                      searchTerm.length > 0
-                                        ? "border-gray-600"
-                                        : "border-gray300",
-                                      "mt-3 py-5 w-full lg:w-[320px] px-[12px] pl-8 rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white"
-                                    )}
-                                    {...field}
-                                    placeholder="Search"
-                                  />
-                                  <MagnifyingGlassIcon className="absolute text-gray-500 w-5 h-5 top-[11px] left-[10px]" />
-                                </div>
-                              </FormControl>
-
-                              {/* <FormMessage /> */}
-                            </FormItem>
-                          );
-                        }}
-                      />
-                    </div>
-                  </div>
 
                   <div className="overflow-x-auto">
                     {searchedTeamMembers.length < 1 ? (
@@ -233,15 +178,74 @@ const InviteTeampage = () => {
                     ) : null}
                     {searchedTeamMembers.length > 0 && searchTerm.length > 0 ? (
                       <>
+                        <div className="mt-6 flex flex-col gap-y-4 lg:flex-row lg:items-end lg:justify-between">
+                          <div className="flex flex-wrap items-center gap-3">
+                            <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
+                              All time <Cross1Icon />
+                            </Badge>
+                            <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
+                              US, AU +4 <Cross1Icon />
+                            </Badge>
+                            <Badge className="flex items-center gap-2 py-[10px] px-[16px] rounded-[8px] bg-white border border-gray-300 shadow-sm hover:bg-white text-gray-700 text-sm poppins-semibold leading-5">
+                              <Image
+                                alt=""
+                                src="/icons/filter-lines.svg"
+                                width={20}
+                                height={20}
+                              />
+                              More filters
+                            </Badge>
+                          </div>
+                          <div>
+                            <FormField
+                              control={form.control}
+                              name="title"
+                              render={({ field }) => {
+                                field = {
+                                  ...field,
+                                  onChange: (e) => {
+                                    setSearchTerm(e.target.value);
+                                  },
+                                  value: searchTerm,
+                                };
+                                return (
+                                  <FormItem className=" relative">
+                                    <FormControl>
+                                      <div className="relative">
+                                        <Input
+                                          className={cn(
+                                            searchTerm.length > 0
+                                              ? "border-gray-600"
+                                              : "border-gray300",
+                                            "mt-3 py-5 w-full lg:w-[320px] px-[12px] pl-8 rounded-[8px] border focus:outline-none outline-none leading-6 poppins-medium bg-white"
+                                          )}
+                                          {...field}
+                                          placeholder="Search"
+                                        />
+                                        <MagnifyingGlassIcon className="absolute text-gray-500 w-5 h-5 top-[11px] left-[10px]" />
+                                      </div>
+                                    </FormControl>
+
+                                    {/* <FormMessage /> */}
+                                  </FormItem>
+                                );
+                              }}
+                            />
+                          </div>
+                        </div>
                         <Table className="mt-6 ">
                           <TableHeader className="bg-gray-200 text-gray-600 poppins-medium rounded-tl-[5px] rounded-tr-[5px]">
                             <TableRow>
-                              <TableHead>User</TableHead>
+                              <TableHead className="rounded-tl-[5px]">
+                                User
+                              </TableHead>
                               <TableHead>Role</TableHead>
                               <TableHead>Location</TableHead>
                               <TableHead>Department</TableHead>
                               <TableHead>Status</TableHead>
-                              <TableHead>Action</TableHead>
+                              <TableHead className="rounded-tr-[5px]">
+                                Action
+                              </TableHead>
                             </TableRow>
                           </TableHeader>
                           <TableBody>
