@@ -65,7 +65,7 @@ const SupportCard = ({
       onMouseLeave={mouseLeave}
       onMouseEnter={mouseEnter}
       className={cn(
-        !hovered ? "opacity-60" : "",
+        !hovered ? "opacity-50" : "opacity-100",
         "p-6 sm:w-[374px] w-[300px] cursor-pointer"
       )}
     >
