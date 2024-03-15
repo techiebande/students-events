@@ -70,11 +70,6 @@ const ApplicationProcessForm = ({ form }: any) => {
       value: isTranscriptRequired,
       fn: setIsTranscriptRequired,
     },
-    {
-      label: "Other",
-      value: isOtherRequired,
-      fn: setIsOtherRequired,
-    },
   ];
 
   return (

@@ -1,0 +1,32 @@
+export const teamMembers = [
+  {
+    name: "Jennifer Cooper",
+    email: "siam.andrews@bcg.com",
+    title: "Owner",
+    company: "Boston Consulting Group (BCG)",
+    office: "London Office",
+    country: "United Kingdom",
+    registerStatus: "Registered",
+    image: "/icons/avatar.png",
+  },
+  {
+    name: "Jennifer Cooper",
+    email: "siam.andrews@bcg.com",
+    title: "Owner",
+    company: "Boston Consulting Group (BCG)",
+    office: "London Office",
+    country: "United Kingdom",
+    registerStatus: "Registered",
+    image: "/icons/avatar.png",
+  },
+  {
+    name: "Jennifer Cooper",
+    email: "siam.andrews@bcg.com",
+    title: "Owner",
+    company: "Boston Consulting Group (BCG)",
+    office: "London Office",
+    country: "United Kingdom",
+    registerStatus: "Pending",
+    image: "/icons/avatar.png",
+  },
+];

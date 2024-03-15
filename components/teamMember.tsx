@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { z } from "zod";
-import { teamMembers } from "./hiringTeamForm";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { ParagraphBody, ParagraphHead } from "./formParagraph";
 import Separator from "./Separator";

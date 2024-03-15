@@ -12,39 +12,7 @@ import TeamMember from "./teamMember";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Table } from "./ui/table";
-
-export const teamMembers = [
-  {
-    name: "Jennifer Cooper",
-    email: "siam.andrews@bcg.com",
-    title: "Owner",
-    company: "Boston Consulting Group (BCG)",
-    office: "London Office",
-    country: "United Kingdom",
-    registerStatus: "Registered",
-    image: "/icons/avatar.png",
-  },
-  {
-    name: "Jennifer Cooper",
-    email: "siam.andrews@bcg.com",
-    title: "Owner",
-    company: "Boston Consulting Group (BCG)",
-    office: "London Office",
-    country: "United Kingdom",
-    registerStatus: "Registered",
-    image: "/icons/avatar.png",
-  },
-  {
-    name: "Jennifer Cooper",
-    email: "siam.andrews@bcg.com",
-    title: "Owner",
-    company: "Boston Consulting Group (BCG)",
-    office: "London Office",
-    country: "United Kingdom",
-    registerStatus: "Pending",
-    image: "/icons/avatar.png",
-  },
-];
+import { teamMembers } from "@/lib/teamMembers";
 
 const HiringTeamForm = ({ form }: any) => {
   const [emailOnAppClose, setEmailOnAppClose] = useState(true);

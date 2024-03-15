@@ -4,12 +4,16 @@ import React from "react";
 const Paper = ({
   children,
   className,
+  ...props
 }: {
   children: React.ReactNode;
   className?: string;
 }) => {
   return (
-    <div className={cn(className, "p-6 bg-white rounded-[5px] shadow-stats")}>
+    <div
+      {...props}
+      className={cn(className, "p-6 bg-white rounded-[5px] shadow-stats")}
+    >
       {children}
     </div>
   );

@@ -47,7 +47,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { teamMembers } from "@/components/hiringTeamForm";
+import { teamMembers } from "@/lib/teamMembers";
 
 const formSchema = z.object({
   title: z.string(),
