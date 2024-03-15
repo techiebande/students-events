@@ -11,9 +11,9 @@ const ChallengePage = () => {
   return (
     <div>
       <ChallengeHeader title="Introduction to strategy consulting " />
-      <div className="mt-5 px-[60px] flex gap-[30px]">
+      <div className="mt-5 px-2 md:px-[60px] flex gap-[30px]">
         <div className="w-full">
-          <Paper className="p-1 sm:p-5">
+          <Paper className="">
             <p className="text-gray-800 text-sm poppins-medium leading-5">
               Task 1: SWOT Analysis
             </p>
