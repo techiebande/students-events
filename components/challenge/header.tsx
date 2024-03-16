@@ -15,7 +15,7 @@ const ChallengeHeader = ({
   return (
     <div
       className={cn(
-        "py-2 xl:items-center justify-between flex flex-col gap-y-4 xl:flex-row px-8 sm:px-[60px]  bg-white relative w-[100vw]",
+        "py-2 pb-4 sm:pb-2 xl:items-center justify-between flex flex-col gap-y-4 xl:flex-row px-8 sm:px-[60px]  bg-white relative w-[100vw]",
         className
       )}
     >

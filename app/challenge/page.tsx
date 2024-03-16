@@ -4,17 +4,19 @@ import ChallengeHeader from "@/components/challenge/header";
 import Paper from "@/components/paper";
 import { Button } from "@/components/ui/button";
 import { cn, filmoType } from "@/lib/utils";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import React from "react";
 
 const Actions = () => {
   return (
     <div className="flex items-center gap-6">
-      <Button className="py-3 px-6 flex items-center justify-center border rounded-[6px] border-gray-300 hover:shadow-stats bg-white hover:bg-white text-gray-600 poppins-semibold text-sm leading-5">
+      <Button className="h-[44px] py-3 px-6 flex items-center justify-center border rounded-[6px] border-gray-300 hover:shadow-stats bg-white hover:bg-white text-gray-600 poppins-semibold text-sm leading-5">
         Back
       </Button>
-      <Button className="items-center justify-center w-[216px] bg-primary600 hover:bg-primary700 poppins-semibold text-sm leading-5 text-white">
+      <Button className="h-[44px] flex gap-3 items-center justify-center w-[216px] bg-primary600 hover:bg-primary700 poppins-semibold text-sm leading-5 text-white">
         Next
+        <ChevronRightIcon className="w-5 h-5" />
       </Button>
     </div>
   );
@@ -22,7 +24,7 @@ const Actions = () => {
 
 const ChallengePage = () => {
   return (
-    <div>
+    <div className="bg-[#F0F5FE] min-h-[100vh]">
       <ChallengeHeader title="Introduction to strategy consulting " />
       <div className="mt-5 px-2 md:px-[60px] flex gap-[30px] pb-6">
         <div className="w-full">
